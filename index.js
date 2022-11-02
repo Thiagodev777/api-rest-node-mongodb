@@ -8,13 +8,17 @@ dotenv.config()
 app.use(express.urlencoded({extended: false}));
 app.use(express.json())
 
-const Person = require('./models/Person');
+const personRoutes = require('./router/personRoutes')
 
-app.get('/', (req, res)=>{
+app.use('/person', personRoutes)
+
+
+app.get('/', (req, res) => {
     res.json({
         nome: 'teste'
     })
 })
+
 
 mongoose.connect(process.env.CONNECTION_MONGODB).then(()=> {
     console.log('ok');
