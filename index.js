@@ -15,7 +15,7 @@ app.use('/person', personRoutes)
 
 app.get('/', (req, res) => {
     res.json({
-        nome: 'teste'
+        "message" : "end point initial"
     })
 })
 
